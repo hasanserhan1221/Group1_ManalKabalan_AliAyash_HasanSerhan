@@ -1,0 +1,1 @@
+I want to make your answer more reliable and detailed. Please add extra code that generates additional figures and charts, and organize all the visual outputs into a single file. This will help improve the quality of your answer when it's shared with you. Please write the code that follows the Python code I'm about to share, keeping it within 200 lines.
