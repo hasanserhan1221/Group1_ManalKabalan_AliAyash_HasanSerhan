@@ -1,157 +1,111 @@
-# Group1_ManalKabalan_AliAyash_HasanSerhan
-AI4EO project on Agentic XAI for Earth Observation, covering paper selection, technical presentation, result reproduction, and extension. Includes Random Forest, SHAP analysis, synthetic rice-yield data, author-result comparison, and decision-support experiments.
+# Task 2 — Technical Understanding and Presentation
 
-# AI4EO Agentic XAI Project
+## Overview
 
-## Project Overview
+This folder contains the materials related to **Task 2 / Milestone 2** of the AI4EO course project. The objective of this task was to study and explain the selected paper, understand its methodology, and prepare a technical presentation about the Agentic XAI workflow.
 
-This repository contains the full AI4EO course project on **Explainable AI (XAI) for Agentic AI**. The project follows the four main milestones: research paper selection, technical understanding and presentation, reproduction of experimental results, and project extension with additional analysis.
+## Selected Paper
 
-The selected work focuses on an **Agentic XAI approach for rice-yield prediction**, where machine learning, SHAP explainability, and LLM-guided reasoning are combined to move from model explanation toward practical decision support.
+The selected paper is:
 
-## Project Milestones
+**Agentic Explainable Artificial Intelligence (Agentic XAI) Approach To Explore Better Explanation**
 
-### Milestone 1: Research Paper Selection
+The paper proposes a workflow that combines machine learning, SHAP explainability, and LLM-guided reasoning to improve the communication of AI-generated explanations.
 
-A recent research paper related to **XAI for Agentic AI** was selected and reviewed. The selected paper provides a workflow that combines predictive modeling, explainability, and iterative reasoning to improve the quality of explanations and recommendations.
+## Purpose of Task 2
 
-### Milestone 2: Technical Understanding and Presentation
+The purpose of this task was to understand and present:
 
-The paper was studied in detail, including:
+* The motivation behind the paper.
+* The Agentic XAI methodology.
+* The system architecture.
+* The role of Random Forest and SHAP.
+* The role of the LLM in explanation refinement.
+* The dataset and evaluation metrics.
+* The main experimental findings.
+* The limitations and design principles of the approach.
 
-* The research problem
-* The proposed Agentic XAI methodology
-* The system workflow
-* The explainability technique used
-* The dataset and evaluation metrics
-* The reported experimental results
-* The strengths and limitations of the approach
+## Presentation Summary
 
-A technical presentation was prepared to explain the motivation, methodology, implementation workflow, experimental setup, key findings, and limitations.
+The presentation explains that traditional XAI outputs, such as SHAP plots, can be technical and difficult for non-experts to understand. The selected paper addresses this problem by using an LLM as a second explanation layer that translates SHAP results into clearer explanations, counterfactual scenarios, and practical recommendations.
 
-### Milestone 3: Reproduction of Experimental Results
+The presentation also explains why the workflow is considered **Agentic AI**. Instead of stopping after one explanation, the system runs multiple refinement rounds. In each round, the LLM reviews the previous explanation, identifies missing analysis, suggests new evidence, and refines the recommendation.
 
-The reproduction phase focused on rebuilding the main experimental workflow. This included:
+## Main Topics Covered
 
-* Environment setup
-* Dataset preparation
-* Random Forest model training
-* Model evaluation
-* SHAP-based explainability
-* Generation of round-based visual analysis outputs
-* Comparison between the author’s results and reproduced results
+The presentation covers the following topics:
 
-Since the original dataset was not publicly available, a synthetic rice-yield dataset with the same expected structure was used. Therefore, the reproduction focuses on the workflow structure rather than exact numerical replication.
+1. **Introduction and Motivation**
+   The goal is to improve the communication of AI-generated insights so they are understandable and useful for human decision-makers.
 
-## Author Results vs Reproduced Results
+2. **Agentic XAI Workflow**
+   The workflow starts with SHAP analysis and then uses an LLM to iteratively improve explanations across multiple rounds.
 
-The author’s results were based on the original rice-yield dataset, while the reproduced results were generated using synthetic data. Because of this, numerical results such as R², RMSE, MAE, and SHAP values are different.
+3. **System Architecture**
+   The architecture includes agricultural tabular data, a Random Forest model, SHAP analysis, a beeswarm plot, and LLM-based recommendation refinement.
 
-However, the main workflow was reproduced successfully:
+4. **Explainability Technique**
+   SHAP is used because it provides consistent feature attribution, supports both global and local explanations, and works well with Random Forest models.
 
-* Same model type: Random Forest
-* Same explainability method: SHAP
-* Same round-based analysis structure
-* Same type of visual outputs
-* Same comparison logic between model performance and explanation quality
+5. **Dataset and Evaluation Metrics**
+   The original study used rice-yield data from Tomioka-machi, Fukushima, Japan, covering 66 field-year records from 2021 to 2023.
 
-The main conclusion is that the project achieved **workflow reproduction**, not exact numerical replication.
+6. **Experimental Results**
+   The paper found that explanation quality follows an inverted U-shaped pattern: quality improves in early rounds, peaks around Rounds 3–4, and then declines when explanations become too complex.
 
-## Milestone 4: Project Extension and Additional Results
+7. **Design Principles**
+   The presentation highlights the need for early stopping, hybrid human-LLM evaluation, observability protocols, and careful control of explanation complexity.
 
-The extension phase added further analysis beyond the basic reproduction. The additional results focused on validation, feasibility, risk, and decision-support interpretation.
+## Key Technical Understanding
 
-The extended analysis includes:
+The main technical idea is that SHAP provides the first layer of explanation, while the LLM provides a second layer that makes the explanation more human-readable and actionable.
 
-* Scientific validation of model findings
-* Feature importance stability
-* Radiation4 partial dependence analysis
-* Yield environment clustering
-* Economic scenario analysis
-* Feasibility assessment
-* Decision-tree-based recommendation logic
-* Risk and uncertainty analysis
-* Technology adoption barriers
-* Practical decision-support interpretation
-
-This extension shows how Agentic XAI can move from technical model explanation toward more realistic agricultural and Earth Observation decision-making.
-
-## Repository Contents
+The Agentic XAI process can be summarized as:
 
 ```text
-.
-├── notebooks/
-│   └── PythonCode.ipynb
-│
-├── data/
-│   └── synthetic rice-yield dataset
-│
-├── prompts/
-│   ├── Prompt_1.txt
-│   ├── Prompt_2.txt
-│   └── Prompt_3.txt
-│
-├── results/
-│   ├── reproduced analysis PDFs
-│   ├── round-based outputs
-│   └── comparison figures
-│
-├── reports/
-│   ├── reproduction report
-│   └── extension report
-│
-├── presentations/
-│   └── project presentation
-│
-└── README.md
-```
-
-## Methodology
-
-The implemented workflow follows these main steps:
-
-```text
-Dataset preparation
-        ↓
-Random Forest model training
-        ↓
-Model evaluation
+Model prediction
         ↓
 SHAP explanation
         ↓
-Round-based visual analysis
+LLM interpretation
         ↓
-LLM-guided interpretation using prompts
+Gap identification
+        ↓
+Additional analysis
         ↓
 Recommendation refinement
         ↓
-Validation, feasibility, and risk analysis
+Quality evaluation
 ```
 
-## Technologies Used
+## Important Findings from the Paper
 
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* SHAP
-* Matplotlib
-* Seaborn
-* Random Forest Regressor
-* Prompt-based LLM reasoning
+The paper found that more explanation is not always better. Early rounds improve the explanation because they add useful context and evidence. However, later rounds can introduce too much detail, making the explanation longer, more complex, and less practical.
 
-## Key Findings
+The best explanation quality was observed around **Rounds 3–4**. After that, over-refinement reduced clarity and usefulness.
 
-The reproduced results show that the workflow can be executed successfully using a synthetic dataset. The performance values differ from the author’s results because the original dataset was unavailable, but the overall structure of the experiment was reproduced.
+## Materials Included
 
-The extended analysis also shows that Agentic XAI is useful because it does not stop at explaining model predictions. It supports validation, practical planning, feasibility checking, and risk-aware decision support.
+This folder includes:
 
-## Main Limitation
+```text
+Task2_Presentation.pdf
+```
 
-The main limitation is the use of a synthetic dataset instead of the original rice-yield dataset. As a result, the numerical results should not be interpreted as exact agricultural findings. They are used to validate and demonstrate the reproducibility of the workflow.
+The presentation contains the technical explanation of the selected paper, including motivation, methodology, system architecture, SHAP explanation, dataset details, evaluation metrics, experimental results, and key conclusions.
+
+## Outcome of Task 2
+
+The outcome of Task 2 was a technical presentation that demonstrated understanding of the selected paper and prepared the team for the reproduction phase in Task 3.
+
+This task helped clarify:
+
+* How Agentic XAI differs from traditional XAI.
+* Why SHAP is used as the explainability method.
+* How the LLM supports explanation refinement.
+* Why optimal explanation depth is important.
+* Why stopping criteria are needed in Agentic XAI systems.
 
 ## Conclusion
 
-This project demonstrates the full AI4EO workflow for analyzing, reproducing, and extending a recent Agentic XAI study. The repository documents the selected paper, technical understanding, reproduction process, comparison with author results, and additional extension experiments.
-
-The final outcome shows that the Agentic XAI workflow can be reproduced structurally and extended toward practical Earth Observation decision support, even when exact numerical replication is limited by dataset availability.
+Task 2 provided the technical foundation for the rest of the project. By analyzing and presenting the selected paper, the team established a clear understanding of the Agentic XAI workflow, the role of SHAP and LLMs, and the paper’s main finding that explanation quality improves only up to an optimal point before declining due to over-refinement.
