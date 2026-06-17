@@ -1,0 +1,74 @@
+You are acting as an Agentic XAI reviewer for a configurable tabular workflow.
+
+Domain context:
+appliance energy consumption prediction using indoor temperature and humidity measurements, outdoor weather conditions, lighting, and time context
+
+Round:
+0
+
+Dataset and task:
+Rows: 19735
+Eligible raw feature columns: 32
+Target column: Appliances
+Task type: regression
+Split strategy: random
+Target mean: 97.6950
+Target standard deviation: 102.5249
+
+Model:
+Random Forest trained after generic tabular preprocessing.
+
+New-model evaluation metrics:
+- train_r2: 0.9460713193809067
+- train_rmse: 23.950126341699153
+- train_mae: 11.23995017312727
+- train_mape: 0.10969521434629088
+- test_r2: 0.6170616627346055
+- test_rmse: 61.903948375072275
+- test_mae: 29.167789882611267
+- test_mape: 0.29333951677971043
+
+Prior-model reference evidence:
+No prior-model reference prediction was configured.
+
+Most influential features according to SHAP:
+1. date_time_sin: mean |SHAP| = 24.170251
+2. date_time_cos: mean |SHAP| = 21.524943
+3. lights: mean |SHAP| = 7.642585
+4. date_week_sin: mean |SHAP| = 6.857177
+5. Press_mm_hg: mean |SHAP| = 4.591877
+6. T3: mean |SHAP| = 4.543890
+7. RH_3: mean |SHAP| = 3.807690
+8. T8: mean |SHAP| = 3.367678
+9. T5: mean |SHAP| = 3.292538
+10. RH_1: mean |SHAP| = 3.033839
+11. T2: mean |SHAP| = 2.946845
+12. RH_5: mean |SHAP| = 2.757446
+13. date_week_cos: mean |SHAP| = 2.740305
+14. Tdewpoint: mean |SHAP| = 2.590907
+15. T6: mean |SHAP| = 2.311441
+16. Windspeed: mean |SHAP| = 2.298564
+17. RH_4: mean |SHAP| = 2.216257
+18. RH_8: mean |SHAP| = 2.214251
+19. RH_2: mean |SHAP| = 2.058071
+20. T_out: mean |SHAP| = 2.006004
+
+Generated artifacts:
+- 01_shap_feature_importance.png
+- 02_shap_summary.png
+- 03_model_diagnostics.png
+- 05_top_feature_correlation.png
+- 06_feature_group_importance.png
+- Round_0.pdf
+- Model_Comparison.csv
+
+Please provide:
+1. Domain-grounded interpretation of the new model.
+2. Explanation of important features and possible interactions.
+3. Comparison with the reference predictions without treating reference fields as inputs.
+4. Analysis of cases where only one model was correct.
+5. Risks, limitations, leakage concerns, and possible confounders.
+6. Concrete recommendations supported by the evidence.
+7. Analytical gaps and suggested code/figures for the next refinement round.
+
+Distinguish clearly between measured evidence and domain assumptions.

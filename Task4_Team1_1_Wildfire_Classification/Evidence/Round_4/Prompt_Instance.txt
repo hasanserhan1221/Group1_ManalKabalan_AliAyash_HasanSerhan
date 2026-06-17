@@ -1,0 +1,57 @@
+You are the self-reflection component of an Agentic XAI workflow.
+
+Domain context:
+wildfire occurrence classification using Earth observation, weather, terrain, and land-cover variables
+
+Current refinement round:
+4
+
+Current analysis module:
+robustness_and_sensitivity
+
+Controller decision:
+This final planned round tests whether the explanation survives held-out feature permutation, small input perturbations, and repeated SHAP resampling. Further refinement should occur only when the LLM reviewer identifies a specific unresolved contradiction supported by these files.
+
+Previous recommendation file:
+Recommendations\Round_3.md
+
+Measured evidence:
+{
+  "held_out_sample_size": 2000,
+  "baseline_held_out_score": 0.5837150986160003,
+  "score_definition": "balanced_accuracy",
+  "most_permutation_sensitive_feature": {
+    "feature": "Elevation__Low",
+    "baseline_score": 0.5837150986160003,
+    "permuted_score_mean": 0.5435825255983668,
+    "score_drop": 0.04013257301763351,
+    "score_drop_std": 0.002243373358409295
+  },
+  "least_stable_reported_top_feature": {
+    "feature": "B10",
+    "mean_rank": 14.14,
+    "rank_std": 0.7485986908885159,
+    "top_10_frequency": 0.0
+  }
+}
+
+Current artifacts:
+- 01_permutation_sensitivity.png
+- 02_perturbation_sensitivity.png
+- 03_shap_rank_stability.png
+- Round_4.pdf
+- permutation_sensitivity.csv
+- perturbation_sensitivity.csv
+- shap_rank_stability.csv
+- Evidence.json
+
+Please:
+1. Separate measured evidence from domain assumptions.
+2. Explain what this round adds beyond the previous round.
+3. Identify contradictions, weak evidence, leakage risks, and uncertainty.
+4. Update the domain recommendations, keeping only claims supported by evidence.
+5. State the most important unresolved analytical gap.
+6. Assess whether the proposed next module, conditional_stop_or_targeted_follow_up, is justified.
+
+Do not invent economic, operational, causal, or geographic facts that are not
+present in the evidence.

@@ -1,0 +1,7 @@
+feature,perturbation_step,sensitivity_measure,mean_change
+Elevation,49.546125199264615,mean_absolute_probability_change,0.024232792832776386
+Slope,0.8530821556859257,mean_absolute_probability_change,0.015192192652657326
+B4_num,215.36938134671288,mean_absolute_probability_change,0.014182311838624336
+B5_num,215.60005356597287,mean_absolute_probability_change,0.012356581888749652
+Aspect,6.960487824415262,mean_absolute_probability_change,0.008612980370448423
+NDVI,0.01946828372361284,mean_absolute_probability_change,0.007597670634920634

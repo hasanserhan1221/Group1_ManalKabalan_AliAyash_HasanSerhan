@@ -1,0 +1,8 @@
+Review the current explanation and recommendation.
+
+Identify the most important unresolved analytical gap that can be tested with
+the available tabular data. Propose one justified analysis module, the figures
+or tables it should generate, and how its result would change the explanation.
+
+Do not invent domain facts, causal effects, or operational recommendations.
+Keep the proposed analysis reproducible and suitable for the configured task.

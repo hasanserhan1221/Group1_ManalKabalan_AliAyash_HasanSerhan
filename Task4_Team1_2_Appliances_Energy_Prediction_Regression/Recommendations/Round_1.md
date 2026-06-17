@@ -1,0 +1,112 @@
+# Round 01 Recommendation Draft
+
+## Analysis Module
+
+generalization_and_split_sensitivity
+
+## Controller Decision
+
+The conventional random test R2 is 0.6171, but grouped-date R2 is -0.0527 and future-period R2 is -3.6599. This large split sensitivity indicates that neighboring observations and temporal distribution shift materially affect the apparent model quality. The next round must locate where errors concentrate.
+
+## Evidence
+
+```json
+{
+  "train_test_metrics": [
+    {
+      "metric": "r2",
+      "train": 0.9460713193809067,
+      "test": 0.6170616627346055
+    },
+    {
+      "metric": "rmse",
+      "train": 23.950126341699153,
+      "test": 61.903948375072275
+    },
+    {
+      "metric": "mae",
+      "train": 11.23995017312727,
+      "test": 29.167789882611267
+    }
+  ],
+  "bootstrap_intervals": [
+    {
+      "metric": "r2",
+      "mean": 0.6142782235506579,
+      "ci_2_5": 0.5811067036609583,
+      "ci_97_5": 0.6441358702454059
+    },
+    {
+      "metric": "rmse",
+      "mean": 62.083706520871125,
+      "ci_2_5": 57.57275376915349,
+      "ci_97_5": 67.4458758513808
+    },
+    {
+      "metric": "mae",
+      "mean": 29.19253682121442,
+      "ci_2_5": 27.360399037243475,
+      "ci_97_5": 31.086441390085298
+    },
+    {
+      "metric": "mape",
+      "mean": 0.2935971479258418,
+      "ci_2_5": 0.2813947034586236,
+      "ci_97_5": 0.3064215593140645
+    }
+  ],
+  "generalization_gap": 0.3290096566463012,
+  "calibration": {},
+  "split_sensitivity": [
+    {
+      "split": "random",
+      "train_rows": 15788,
+      "test_rows": 3947,
+      "train_r2": 0.9460713193809067,
+      "train_rmse": 23.950126341699153,
+      "train_mae": 11.23995017312727,
+      "train_mape": 0.10969521434629088,
+      "test_r2": 0.6170616627346055,
+      "test_rmse": 61.903948375072275,
+      "test_mae": 29.167789882611267,
+      "test_mape": 0.29333951677971043
+    },
+    {
+      "split": "grouped_dates",
+      "train_rows": 15703,
+      "test_rows": 4032,
+      "train_r2": 0.9504482655367105,
+      "train_rmse": 22.717886432286594,
+      "train_mae": 10.44067375660702,
+      "train_mape": 0.10100887560580575,
+      "test_r2": -0.052658691900671295,
+      "test_rmse": 107.00201023089417,
+      "test_mae": 63.51512896825397,
+      "test_mape": 0.7838905947319535
+    },
+    {
+      "split": "temporal_future",
+      "train_rows": 15788,
+      "test_rows": 3947,
+      "train_r2": 0.9523462242231439,
+      "train_rmse": 22.963791073376207,
+      "train_mae": 10.780459842918672,
+      "train_mape": 0.10646429880678068,
+      "test_r2": -3.6599313159017735,
+      "test_rmse": 196.52372812824035,
+      "test_mae": 159.46853306308586,
+      "test_mape": 2.2470122893240982
+    }
+  ]
+}
+```
+
+## LLM Self-Reflection
+
+`LLM_PROVIDER` is set to `manual`. In manual mode, submit the generated
+prompt to the same LLM configuration used for every round and replace this
+section with its response.
+
+## Proposed Next Analysis
+
+error_and_subgroup_audit

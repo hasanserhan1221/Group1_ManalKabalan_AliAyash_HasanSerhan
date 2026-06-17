@@ -1,0 +1,6 @@
+{
+  "round": 4,
+  "analysis_module": "robustness_and_sensitivity",
+  "reason": "This final planned round tests whether the explanation survives held-out feature permutation, small input perturbations, and repeated SHAP resampling. Further refinement should occur only when the LLM reviewer identifies a specific unresolved contradiction supported by these files.",
+  "next_analysis": "conditional_stop_or_targeted_follow_up"
+}

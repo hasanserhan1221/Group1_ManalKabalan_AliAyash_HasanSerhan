@@ -1,0 +1,18 @@
+{
+  "held_out_sample_size": 2000,
+  "baseline_held_out_score": 0.5837150986160003,
+  "score_definition": "balanced_accuracy",
+  "most_permutation_sensitive_feature": {
+    "feature": "Elevation__Low",
+    "baseline_score": 0.5837150986160003,
+    "permuted_score_mean": 0.5435825255983668,
+    "score_drop": 0.04013257301763351,
+    "score_drop_std": 0.002243373358409295
+  },
+  "least_stable_reported_top_feature": {
+    "feature": "B10",
+    "mean_rank": 14.14,
+    "rank_std": 0.7485986908885159,
+    "top_10_frequency": 0.0
+  }
+}

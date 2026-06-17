@@ -1,0 +1,82 @@
+[
+  {
+    "round": 1,
+    "analysis_module": "generalization_and_split_sensitivity",
+    "controller_reason": "The conventional random test R2 is 0.6171, but grouped-date R2 is -0.0527 and future-period R2 is -3.6599. This large split sensitivity indicates that neighboring observations and temporal distribution shift materially affect the apparent model quality. The next round must locate where errors concentrate.",
+    "next_analysis": "error_and_subgroup_audit",
+    "figures": [
+      "Figures\\Round_1\\01_train_test_generalization.png",
+      "Figures\\Round_1\\02_split_sensitivity.png",
+      "Figures\\Round_1\\03_future_period_stress_test.png",
+      "Figures\\Round_1\\04_residual_reliability.png",
+      "Figures\\Round_1.pdf"
+    ],
+    "tables": [
+      "Evidence\\Round_1\\train_test_metrics.csv",
+      "Evidence\\Round_1\\bootstrap_metric_intervals.csv",
+      "Evidence\\Round_1\\confidence_or_residual_summary.csv",
+      "Evidence\\Round_1\\split_sensitivity_metrics.csv",
+      "Evidence\\Round_1\\temporal_stress_predictions.csv"
+    ],
+    "evidence": "Evidence\\Round_1\\Evidence.json",
+    "prompt": "Evidence\\Round_1\\Prompt_Instance.txt",
+    "recommendation": "Recommendations\\Round_1.md"
+  },
+  {
+    "round": 2,
+    "analysis_module": "error_and_subgroup_audit",
+    "controller_reason": "The global metrics hide subgroup-dependent behavior. The worst observed subgroup is {'feature': 'lights', 'group': '30', 'count': 104, 'mae': 50.42532051282051}. The next round examines how influential features change predictions and whether apparent effects are conditional on other features.",
+    "next_analysis": "feature_behavior_and_interactions",
+    "figures": [
+      "Figures\\Round_2\\01_subgroup_performance.png",
+      "Figures\\Round_2.pdf"
+    ],
+    "tables": [
+      "Evidence\\Round_2\\subgroup_audit.csv",
+      "Evidence\\Round_2\\reference_disagreement_counts.csv"
+    ],
+    "evidence": "Evidence\\Round_2\\Evidence.json",
+    "prompt": "Evidence\\Round_2\\Prompt_Instance.txt",
+    "recommendation": "Recommendations\\Round_2.md"
+  },
+  {
+    "round": 3,
+    "analysis_module": "feature_behavior_and_interactions",
+    "controller_reason": "Global importance alone does not establish direction, thresholds, or conditional behavior. This round characterized binned SHAP effects and identified the strongest contribution co-movement pair as {'feature_1': 'date_time_sin', 'feature_2': 'date_time_cos', 'spearman_shap_comovement': 0.4315161715161715}. The final round tests whether these explanations remain stable under permutation, perturbation, and SHAP resampling.",
+    "next_analysis": "robustness_and_sensitivity",
+    "figures": [
+      "Figures\\Round_3\\01_shap_dependence.png",
+      "Figures\\Round_3\\02_binned_feature_effects.png",
+      "Figures\\Round_3\\03_shap_comovement_proxy.png",
+      "Figures\\Round_3.pdf"
+    ],
+    "tables": [
+      "Evidence\\Round_3\\feature_effects.csv",
+      "Evidence\\Round_3\\feature_effect_summary.csv",
+      "Evidence\\Round_3\\interaction_screening_proxy.csv"
+    ],
+    "evidence": "Evidence\\Round_3\\Evidence.json",
+    "prompt": "Evidence\\Round_3\\Prompt_Instance.txt",
+    "recommendation": "Recommendations\\Round_3.md"
+  },
+  {
+    "round": 4,
+    "analysis_module": "robustness_and_sensitivity",
+    "controller_reason": "This final planned round tests whether the explanation survives held-out feature permutation, small input perturbations, and repeated SHAP resampling. Further refinement should occur only when the LLM reviewer identifies a specific unresolved contradiction supported by these files.",
+    "next_analysis": "conditional_stop_or_targeted_follow_up",
+    "figures": [
+      "Figures\\Round_4\\01_permutation_sensitivity.png",
+      "Figures\\Round_4\\02_perturbation_sensitivity.png",
+      "Figures\\Round_4\\03_shap_rank_stability.png",
+      "Figures\\Round_4.pdf"
+    ],
+    "tables": [
+      "Evidence\\Round_4\\permutation_sensitivity.csv",
+      "Evidence\\Round_4\\perturbation_sensitivity.csv",
+      "Evidence\\Round_4\\shap_rank_stability.csv"
+    ],
+    "evidence": "Evidence\\Round_4\\Evidence.json",
+    "prompt": "Evidence\\Round_4\\Prompt_Instance.txt",
+    "recommendation": "Recommendations\\Round_4.md"
+  }
+]

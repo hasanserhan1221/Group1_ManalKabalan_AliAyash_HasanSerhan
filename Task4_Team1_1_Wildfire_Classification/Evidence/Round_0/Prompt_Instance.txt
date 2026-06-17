@@ -1,0 +1,95 @@
+You are acting as an Agentic XAI reviewer for a tabular AI4EO workflow.
+
+Domain context:
+wildfire occurrence classification using Earth observation, weather, terrain, and land-cover variables
+
+Round:
+0
+
+Dataset and task:
+Rows: 173991
+Eligible raw feature columns: 41
+Target column: Fire_Label
+Task type: classification
+Split strategy: group
+Class distribution:
+Fire_Label
+1    87216
+0    86775
+
+Model:
+Random Forest trained after generic tabular preprocessing.
+
+New-model evaluation metrics:
+- train_accuracy: 0.9991916764926175
+- train_balanced_accuracy: 0.9991977923806283
+- train_precision: 0.9988363834192193
+- train_recall: 0.9995160900072586
+- train_f1: 0.9991761211177542
+- test_accuracy: 0.5686695278969958
+- test_balanced_accuracy: 0.5837437422808016
+- test_precision: 0.6721821756225426
+- test_recall: 0.3891312594840668
+- test_f1: 0.49291206150888994
+- test_roc_auc: 0.6892282854895713
+
+Prior-model reference evidence:
+Reference-model metrics on the same selected test rows:
+{
+  "accuracy": 0.9522787655834866,
+  "balanced_accuracy": 0.9510232307950379,
+  "precision": 0.9454435895058867,
+  "recall": 0.9672325493171472,
+  "f1": 0.9562139609019736,
+  "roc_auc": 0.9834381437567694
+}
+Prediction agreement/error categories:
+comparison_status
+both_correct              21283
+reference_only_correct    15993
+new_model_only_correct      977
+both_wrong                  891
+Important limitation: the prior predictions are not confirmed as out-of-sample. Use them for diagnostic comparison, not as proof that one model generalizes better.
+
+Most influential features according to SHAP:
+1. Elevation__Low: mean |SHAP| = 0.061334
+2. Elevation: mean |SHAP| = 0.059442
+3. Aspect: mean |SHAP| = 0.040211
+4. LUC_majori: mean |SHAP| = 0.036837
+5. Slope: mean |SHAP| = 0.036061
+6. Elevation__High: mean |SHAP| = 0.033137
+7. B4_num: mean |SHAP| = 0.026491
+8. NDVI: mean |SHAP| = 0.021542
+9. B5_num: mean |SHAP| = 0.020172
+10. Elevation__Medium: mean |SHAP| = 0.017884
+11. B3_num: mean |SHAP| = 0.015370
+12. B11_num: mean |SHAP| = 0.015090
+13. NDWI: mean |SHAP| = 0.013282
+14. B10: mean |SHAP| = 0.012698
+15. B1_num: mean |SHAP| = 0.012499
+16. B2_num: mean |SHAP| = 0.011427
+17. B6_num: mean |SHAP| = 0.009379
+18. NBR: mean |SHAP| = 0.008559
+19. wind_spd: mean |SHAP| = 0.008223
+20. B12_num: mean |SHAP| = 0.007615
+
+Generated artifacts:
+- 01_shap_feature_importance.png
+- 02_shap_summary.png
+- 03_model_diagnostics.png
+- 04_reference_model_comparison.png
+- 05_top_feature_correlation.png
+- 06_feature_group_importance.png
+- Round_0.pdf
+- Model_Comparison.csv
+
+Please provide:
+1. Domain-grounded interpretation of the new model.
+2. Explanation of important features and possible interactions.
+3. Comparison with the reference predictions without treating reference fields as inputs.
+4. Analysis of cases where only one model was correct.
+5. Risks, limitations, leakage concerns, and possible confounders.
+6. Concrete recommendations supported by the evidence.
+7. Analytical gaps and suggested code/figures for the next refinement round.
+
+Distinguish clearly between measured evidence and domain assumptions.

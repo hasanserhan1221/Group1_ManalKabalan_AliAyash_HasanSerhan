@@ -1,0 +1,58 @@
+You are the self-reflection component of an Agentic XAI workflow.
+
+Domain context:
+appliance energy consumption prediction using indoor temperature and humidity measurements, outdoor weather conditions, lighting, and time context
+
+Current refinement round:
+3
+
+Current analysis module:
+feature_behavior_and_interactions
+
+Controller decision:
+Global importance alone does not establish direction, thresholds, or conditional behavior. This round characterized binned SHAP effects and identified the strongest contribution co-movement pair as {'feature_1': 'date_time_sin', 'feature_2': 'date_time_cos', 'spearman_shap_comovement': 0.4315161715161715}. The final round tests whether these explanations remain stable under permutation, perturbation, and SHAP resampling.
+
+Previous recommendation file:
+Recommendations\Round_2.md
+
+Measured evidence:
+{
+  "features_analyzed": [
+    "date_time_sin",
+    "date_time_cos",
+    "lights",
+    "date_week_sin"
+  ],
+  "strongest_feature_effect": {
+    "feature": "date_time_sin",
+    "spearman_value_shap": -0.8056494997823073,
+    "mean_abs_shap": 24.170250691929414
+  },
+  "strongest_comovement_pair": {
+    "feature_1": "date_time_sin",
+    "feature_2": "date_time_cos",
+    "spearman_shap_comovement": 0.4315161715161715
+  },
+  "interaction_warning": "Contribution co-movement is a screening proxy and must not be reported as a causal or formal interaction estimate."
+}
+
+Current artifacts:
+- 01_shap_dependence.png
+- 02_binned_feature_effects.png
+- 03_shap_comovement_proxy.png
+- Round_3.pdf
+- feature_effects.csv
+- feature_effect_summary.csv
+- interaction_screening_proxy.csv
+- Evidence.json
+
+Please:
+1. Separate measured evidence from domain assumptions.
+2. Explain what this round adds beyond the previous round.
+3. Identify contradictions, weak evidence, leakage risks, and uncertainty.
+4. Update the domain recommendations, keeping only claims supported by evidence.
+5. State the most important unresolved analytical gap.
+6. Assess whether the proposed next module, robustness_and_sensitivity, is justified.
+
+Do not invent economic, operational, causal, or geographic facts that are not
+present in the evidence.

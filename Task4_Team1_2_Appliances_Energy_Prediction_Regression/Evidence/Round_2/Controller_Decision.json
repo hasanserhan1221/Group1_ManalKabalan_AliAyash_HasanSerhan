@@ -1,0 +1,6 @@
+{
+  "round": 2,
+  "analysis_module": "error_and_subgroup_audit",
+  "reason": "The global metrics hide subgroup-dependent behavior. The worst observed subgroup is {'feature': 'lights', 'group': '30', 'count': 104, 'mae': 50.42532051282051}. The next round examines how influential features change predictions and whether apparent effects are conditional on other features.",
+  "next_analysis": "feature_behavior_and_interactions"
+}

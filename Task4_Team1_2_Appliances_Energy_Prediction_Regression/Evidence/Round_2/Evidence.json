@@ -1,0 +1,17 @@
+{
+  "audited_source_features": [
+    "date_time_sin",
+    "date_time_cos",
+    "lights",
+    "date_week_sin"
+  ],
+  "minimum_group_size": 25,
+  "worst_subgroup": {
+    "feature": "lights",
+    "group": "30",
+    "count": 104,
+    "mae": 50.42532051282051
+  },
+  "reference_disagreement_counts": [],
+  "spatial_columns_used": []
+}

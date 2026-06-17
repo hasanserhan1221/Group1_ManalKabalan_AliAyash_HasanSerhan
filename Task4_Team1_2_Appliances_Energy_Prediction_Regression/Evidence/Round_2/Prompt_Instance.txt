@@ -1,0 +1,53 @@
+You are the self-reflection component of an Agentic XAI workflow.
+
+Domain context:
+appliance energy consumption prediction using indoor temperature and humidity measurements, outdoor weather conditions, lighting, and time context
+
+Current refinement round:
+2
+
+Current analysis module:
+error_and_subgroup_audit
+
+Controller decision:
+The global metrics hide subgroup-dependent behavior. The worst observed subgroup is {'feature': 'lights', 'group': '30', 'count': 104, 'mae': 50.42532051282051}. The next round examines how influential features change predictions and whether apparent effects are conditional on other features.
+
+Previous recommendation file:
+Recommendations\Round_1.md
+
+Measured evidence:
+{
+  "audited_source_features": [
+    "date_time_sin",
+    "date_time_cos",
+    "lights",
+    "date_week_sin"
+  ],
+  "minimum_group_size": 25,
+  "worst_subgroup": {
+    "feature": "lights",
+    "group": "30",
+    "count": 104,
+    "mae": 50.42532051282051
+  },
+  "reference_disagreement_counts": [],
+  "spatial_columns_used": []
+}
+
+Current artifacts:
+- 01_subgroup_performance.png
+- Round_2.pdf
+- subgroup_audit.csv
+- reference_disagreement_counts.csv
+- Evidence.json
+
+Please:
+1. Separate measured evidence from domain assumptions.
+2. Explain what this round adds beyond the previous round.
+3. Identify contradictions, weak evidence, leakage risks, and uncertainty.
+4. Update the domain recommendations, keeping only claims supported by evidence.
+5. State the most important unresolved analytical gap.
+6. Assess whether the proposed next module, feature_behavior_and_interactions, is justified.
+
+Do not invent economic, operational, causal, or geographic facts that are not
+present in the evidence.

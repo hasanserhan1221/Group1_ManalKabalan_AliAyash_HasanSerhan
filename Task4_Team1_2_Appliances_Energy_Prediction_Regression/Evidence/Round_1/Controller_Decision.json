@@ -1,0 +1,6 @@
+{
+  "round": 1,
+  "analysis_module": "generalization_and_split_sensitivity",
+  "reason": "The conventional random test R2 is 0.6171, but grouped-date R2 is -0.0527 and future-period R2 is -3.6599. This large split sensitivity indicates that neighboring observations and temporal distribution shift materially affect the apparent model quality. The next round must locate where errors concentrate.",
+  "next_analysis": "error_and_subgroup_audit"
+}

@@ -1,0 +1,7 @@
+feature,perturbation_step,sensitivity_measure,mean_change
+date_time_sin,0.070827186819285,mean_absolute_prediction_change,7.317533333333333
+date_time_cos,0.07060718211105052,mean_absolute_prediction_change,3.139091666666667
+date_week_sin,0.07008057634340913,mean_absolute_prediction_change,2.9934083333333334
+Press_mm_hg,0.7513596696437049,mean_absolute_prediction_change,2.856266666666667
+T3,0.19604340603542683,mean_absolute_prediction_change,1.8820833333333336
+RH_3,0.3298193355140889,mean_absolute_prediction_change,1.8345000000000002

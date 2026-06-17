@@ -1,0 +1,6 @@
+{
+  "round": 2,
+  "analysis_module": "error_and_subgroup_audit",
+  "reason": "The global metrics hide subgroup and location-dependent behavior. The worst observed subgroup is {'feature': 'Elevation', 'group': '(900.924, 1114.59]', 'count': 9778, 'error_rate': 0.6152587441194518}. The next round examines how influential features change predictions and whether apparent effects are conditional on other features.",
+  "next_analysis": "feature_behavior_and_interactions"
+}

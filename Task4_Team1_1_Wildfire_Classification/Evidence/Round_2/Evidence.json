@@ -1,0 +1,37 @@
+{
+  "audited_source_features": [
+    "Elevation_",
+    "Elevation",
+    "Aspect",
+    "LUC_majori"
+  ],
+  "minimum_group_size": 195,
+  "worst_subgroup": {
+    "feature": "Elevation",
+    "group": "(900.924, 1114.59]",
+    "count": 9778,
+    "error_rate": 0.6152587441194518
+  },
+  "reference_disagreement_counts": [
+    {
+      "status": "both_correct",
+      "count": 21283
+    },
+    {
+      "status": "reference_only_correct",
+      "count": 15993
+    },
+    {
+      "status": "new_model_only_correct",
+      "count": 977
+    },
+    {
+      "status": "both_wrong",
+      "count": 891
+    }
+  ],
+  "spatial_columns_used": [
+    "X",
+    "Y"
+  ]
+}

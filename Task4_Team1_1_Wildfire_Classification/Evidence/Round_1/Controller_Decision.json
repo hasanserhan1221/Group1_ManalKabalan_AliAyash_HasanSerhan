@@ -1,0 +1,6 @@
+{
+  "round": 1,
+  "analysis_module": "generalization_and_calibration",
+  "reason": "The balanced-accuracy train-test gap is 0.4155, classified as large. The next round must locate where errors concentrate rather than adding more global importance plots.",
+  "next_analysis": "error_and_subgroup_audit"
+}

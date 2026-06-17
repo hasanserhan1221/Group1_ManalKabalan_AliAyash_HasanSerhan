@@ -1,0 +1,13 @@
+I have provided the dataset context, held-out model
+metrics, SHAP feature importance, a SHAP beeswarm plot, and diagnostic figures.
+
+Based on this evidence:
+1. Explain the model behavior and influential features.
+2. Distinguish measured evidence from domain assumptions.
+3. Provide cautious, evidence-supported recommendations.
+4. Identify leakage risks, uncertainty, and analytical gaps.
+
+Structure the response as:
+1. Evidence-based insights.
+2. Practical recommendations.
+3. Limitations and next refinement step.

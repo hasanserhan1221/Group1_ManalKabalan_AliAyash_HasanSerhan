@@ -1,0 +1,75 @@
+You are the self-reflection component of an Agentic XAI workflow.
+
+Domain context:
+wildfire occurrence classification using Earth observation, weather, terrain, and land-cover variables
+
+Current refinement round:
+2
+
+Current analysis module:
+error_and_subgroup_audit
+
+Controller decision:
+The global metrics hide subgroup and location-dependent behavior. The worst observed subgroup is {'feature': 'Elevation', 'group': '(900.924, 1114.59]', 'count': 9778, 'error_rate': 0.6152587441194518}. The next round examines how influential features change predictions and whether apparent effects are conditional on other features.
+
+Previous recommendation file:
+Recommendations\Round_1.md
+
+Measured evidence:
+{
+  "audited_source_features": [
+    "Elevation_",
+    "Elevation",
+    "Aspect",
+    "LUC_majori"
+  ],
+  "minimum_group_size": 195,
+  "worst_subgroup": {
+    "feature": "Elevation",
+    "group": "(900.924, 1114.59]",
+    "count": 9778,
+    "error_rate": 0.6152587441194518
+  },
+  "reference_disagreement_counts": [
+    {
+      "status": "both_correct",
+      "count": 21283
+    },
+    {
+      "status": "reference_only_correct",
+      "count": 15993
+    },
+    {
+      "status": "new_model_only_correct",
+      "count": 977
+    },
+    {
+      "status": "both_wrong",
+      "count": 891
+    }
+  ],
+  "spatial_columns_used": [
+    "X",
+    "Y"
+  ]
+}
+
+Current artifacts:
+- 01_subgroup_performance.png
+- 02_reference_disagreement.png
+- 03_spatial_error_audit.png
+- Round_2.pdf
+- subgroup_audit.csv
+- reference_disagreement_counts.csv
+- Evidence.json
+
+Please:
+1. Separate measured evidence from domain assumptions.
+2. Explain what this round adds beyond the previous round.
+3. Identify contradictions, weak evidence, leakage risks, and uncertainty.
+4. Update the domain recommendations, keeping only claims supported by evidence.
+5. State the most important unresolved analytical gap.
+6. Assess whether the proposed next module, feature_behavior_and_interactions, is justified.
+
+Do not invent economic, operational, causal, or geographic facts that are not
+present in the evidence.
